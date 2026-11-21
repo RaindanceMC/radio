@@ -1,0 +1,33 @@
+id: radio
+title: Radio
+summary: Your own radio with four stations, heard only by you.
+intro: |
+  Type /music and pick a station. The music plays to you alone, and it keeps playing until you turn it off, even after you log off and come back.
+icon: JUKEBOX
+category: Getting around
+order: 85
+module: radio
+aliases: [radio, music, songs]
+keywords: [music, radio, station, song, track, skip, volume, calm, adventure, cozy, night]
+commands: [music]
+sections:
+  - question: How do I listen to music?
+    title: Tuning in
+    when: radio:enabled
+    text: |
+      /music opens the radio. Pick Calm, Adventure, Cozy or Night. You can also type /music station night. Only you hear it.
+  - question: How do I skip a song or turn it off?
+    title: Skip and stop
+    when: radio:enabled
+    text: |
+      /music skip plays another track on the same station. /music stop turns the radio off, and /music on turns it back on.
+  - question: How do I make it louder or quieter?
+    title: Volume
+    when: radio:enabled
+    text: |
+      Use the arrows on the /music page, or type /music volume 40. The game's Jukebox/Note Blocks slider changes it too.
+  - question: What about the other music?
+    title: Other music
+    when: radio:enabled
+    text: |
+      While the radio is on, it plays instead of the music when you log on and the AFK camera's music. A one-off moment, like the music on your first visit to a new dimension, pauses the radio, and it carries on afterwards.
