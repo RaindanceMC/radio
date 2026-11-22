@@ -100,13 +100,14 @@ public final class RadioService {
 
     /** Turns the radio on at {@code station}, or moves it there. */
     public Tuned tune(Player player, Station station) {
-        player.getPersistentDataContainer().set(STATION, PersistentDataType.STRING, station.id());
         if (!settings.get().enabled()) {
             return Tuned.OFF_HERE;
         }
+        // Kept only with tracks: an empty station kept would leave the radio silent on the next log-on.
         if (tracks(station).isEmpty()) {
             return Tuned.NO_TRACKS;
         }
+        player.getPersistentDataContainer().set(STATION, PersistentDataType.STRING, station.id());
         PackStatus pack = packs.statusOf(player.getUniqueId());
         if (pack == PackStatus.DECLINED || pack == PackStatus.FAILED) {
             return Tuned.NO_PACK;
