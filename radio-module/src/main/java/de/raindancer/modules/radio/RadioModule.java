@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
  */
 public final class RadioModule implements FlexModule {
 
-    private static final ModuleInfo INFO = ModuleInfo.of("radio", "Radio", "0.1.0")
+    private static final ModuleInfo INFO = ModuleInfo.of("radio", "Radio", "0.2.0")
             .describedAs("Your own radio: four stations, skip, stop and volume, heard by you alone")
             .by("Raindancer118");
 
@@ -48,7 +48,7 @@ public final class RadioModule implements FlexModule {
                 context.core().resourcePacks(), context.core().actionBars(), context.core().messages(),
                 System::currentTimeMillis);
         context.listener(new RadioListener(radio));
-        RadioCommands.ready(new RadioServices(context.core().messages(), context.chat().brand(), radio));
+        RadioCommands.ready(new RadioServices(context.core().messages(), radio));
         for (Player online : context.plugin().getServer().getOnlinePlayers()) {
             radio.joined(online);
         }

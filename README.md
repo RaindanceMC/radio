@@ -21,7 +21,7 @@ Needs Java 25 and read access to `packages.tstieh.de` (server ids `packages-rele
 
 ## Plugins
 
-- `radio-standalone/target/RainsRadio-0.1.0.jar` — needs RainsCore 2.115.0 or newer
+- `radio-standalone/target/RainsRadio-0.2.0.jar` — needs RainsCore 2.115.0 or newer
 
 ## Versions
 

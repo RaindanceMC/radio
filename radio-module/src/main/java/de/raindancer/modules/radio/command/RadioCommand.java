@@ -4,7 +4,7 @@ import de.raindancer.modules.radio.RadioServices;
 import de.raindancer.modules.radio.model.Station;
 import de.raindancer.modules.radio.rules.RadioRule;
 import de.raindancer.modules.radio.screen.RadioAnswers;
-import de.raindancer.modules.radio.screen.RadioMenu;
+import de.raindancer.modules.radio.screen.RadioDialog;
 import de.raindancer.modules.radio.service.RadioService;
 import de.raindancer.modules.radio.util.PermissionNodes;
 import io.papermc.paper.command.brigadier.BasicCommand;
@@ -42,7 +42,7 @@ public final class RadioCommand implements BasicCommand {
         RadioService radio = live.radio();
         String first = args.length == 0 ? "" : args[0].toLowerCase(Locale.ROOT);
         switch (first) {
-            case "" -> new RadioMenu(live, player, null).open();
+            case "" -> RadioDialog.open(live, player);
             case "skip", "next" -> live.messages().send(player, radio.skip(player) ? "radio.skipped" : "radio.nothing-to-skip");
             case "stop", "off" -> live.messages().send(player, radio.stop(player) ? "radio.stopped" : "radio.was-off");
             case "on", "play" -> {

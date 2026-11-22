@@ -23,7 +23,8 @@
     <properties>
         <plugin.name>RainsRadio</plugin.name>
         <!-- 0.1.0: /music with four stations, skip, stop, volume, now playing; above join and AFK music. -->
-        <plugin.version>0.1.0</plugin.version>
+        <!-- 0.2.0: /music is the game's own dialog instead of a chest page. -->
+        <plugin.version>0.2.0</plugin.version>
     </properties>
 
     <dependencies>
